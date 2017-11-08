@@ -17,7 +17,7 @@ public class ContactsPageTest extends TestBase{
     TestUtil Util;
     ExcelLoopLogic smthng;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp() throws InterruptedException{
         init();
         Util = new TestUtil();
@@ -72,12 +72,13 @@ public class ContactsPageTest extends TestBase{
 
         hmePageObj.clickOnNewContactLink();
         cntPageObj.createNewContact(Thetitle,firstName,lastName,theCompany);
+//        System.out.println("Values entered for: "+ Thetitle+" "+firstName+" "+lastName+" at "+theCompany);
 
     }
 
 
 
-    @AfterMethod
+    @AfterTest
     public void tearDown(){
 
         driver.quit();

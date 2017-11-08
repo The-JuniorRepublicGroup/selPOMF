@@ -12,7 +12,7 @@ public class LoginPageTest extends TestBase {
     LoginPage lgnPageObj;
     HomePage hmePageObj;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp(){
 
         init();
@@ -46,7 +46,7 @@ public class LoginPageTest extends TestBase {
     }
 
 
-    @AfterMethod
+    @AfterTest
     public void tearDown(){
 
         driver.quit();

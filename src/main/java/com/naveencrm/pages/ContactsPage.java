@@ -5,9 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContactsPage extends TestBase {
+
+    WebDriverWait wait = new WebDriverWait(this.driver, 20);
 
     @FindBy(xpath = "//*[@id=\"vContactsForm\"]/table/tbody/tr[1]/td/table/tbody/tr/td[1]")
     WebElement contactPageHeadingTxt;
@@ -36,6 +40,8 @@ public class ContactsPage extends TestBase {
     }
 
     public void selectAContactCheckBox(){
+
+        wait.until(ExpectedConditions.elementToBeClickable(checkBox));
         checkBox.click();
     }
 
@@ -45,6 +51,7 @@ public class ContactsPage extends TestBase {
         firstNameField.sendKeys(fname);
         lastNameField.sendKeys(lname);
         companyNameField.sendKeys(cmpname);
+        wait.until(ExpectedConditions.elementToBeClickable(saveBtn)).click();
 //        saveBtn.click();
     }
 }

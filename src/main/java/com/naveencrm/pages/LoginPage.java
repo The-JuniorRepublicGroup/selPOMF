@@ -5,9 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends TestBase {
+
+    WebDriverWait wait = new WebDriverWait(this.driver, 20);
 
     /***
      *
@@ -54,12 +57,13 @@ public class LoginPage extends TestBase {
         usernameField.sendKeys(username);
         passwordField.sendKeys(password);
         Thread.sleep(1000);
-        try {
-            loginBtn.click();
-        } catch (Exception e) {
-            System.out.println("Button not clickable");
-
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
+//        try {
+//            loginBtn.click();
+//        } catch (Exception e) {
+//            System.out.println("Button not clickable");
+//
+//        }
 
         return new HomePage();
 

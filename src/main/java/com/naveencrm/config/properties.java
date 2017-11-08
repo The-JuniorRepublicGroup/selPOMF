@@ -8,7 +8,6 @@ public interface properties {
 
     String username = "naveenk";
 
-
     String password = "test@123";
 
 
