@@ -80,9 +80,7 @@ public class ContactsPageTest extends TestBase{
 
     @AfterTest
     public void tearDown(){
-
         driver.quit();
-
     }
 
 }

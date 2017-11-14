@@ -12,9 +12,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 
+import static com.naveencrm.base.coreMethods.*;
+
 public class HomePage extends TestBase {
 
-    public WebDriverWait wait = new WebDriverWait(this.driver, 20);
+//    public WebDriverWait wait = new WebDriverWait(this.driver, 20);
 
 
     @FindBy(xpath = "//td[contains(text(),'User: Naveen K')]")
@@ -63,7 +65,7 @@ public class HomePage extends TestBase {
     public void clickOnNewContactLink(){
         Actions action = new Actions(driver);
 
-        wait.until(ExpectedConditions.visibilityOf(contactsPageBtn));
+        getWaiter().until(ExpectedConditions.visibilityOf(contactsPageBtn));
         action.moveToElement(contactsPageBtn).build().perform();
 
         newContactsBtn.click();

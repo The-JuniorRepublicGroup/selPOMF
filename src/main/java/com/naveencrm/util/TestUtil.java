@@ -51,10 +51,7 @@ public class TestUtil extends TestBase {
         driver.switchTo().frame(frameName);
     }
 
-    public void waitForClickableElement(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
+
 
 
     /**
